@@ -1,0 +1,58 @@
+{% extends "layouts/layout.html" %}
+
+{%block content%}
+ <!-- Hero Section -->
+  <div class=" content container"  >
+      <div class="row" >
+           <div class="col-lg-5 col-md-5" >
+               <div class="d-flex flex-column">
+                <div class="form-group">
+                  <label for=""></label>
+                    <textarea class="form-control bg-dark text-info" name="model-1" id="model-1" rows="7" ></textarea>
+                  <small id="helpId" class="text-muted">Model 1</small>
+                </div>
+                <div class="form-group " >
+                  <label for=""></label>
+                    <textarea class="form-control bg-dark text-info" rows="15"  name="code-1" id="code-1"  ></textarea>
+                    <small class="text-muted" for="code-1">Code mẫu</small>
+               </div>
+              </div>
+           </div>
+           <div class="col-lg-2 col-md-2 d-flex align-items-center justify-content-center" >
+             <div  >
+              <button type="button" style="min-width:92px"  id="btnGen" class="btn btn-primary" >
+                 
+                GenCode
+              </button>
+             </div>
+          </div>
+           <div class="col-lg-5 col-md-5" >
+            <div class="d-flex flex-column">
+              <div class="form-group">
+                <label for=""></label>
+                  <textarea class="form-control bg-dark text-warning" name="model-2" id="model-2" rows="7"></textarea>
+                <small id="helpId" class="text-muted">Model 2</small>
+              </div>
+              <div class="form-group">
+                <label for=""></label>
+                  <textarea class="form-control bg-dark text-warning" name="code-2" id="code-2" rows="15">
+                   
+
+                  </textarea>
+                <small id="helpId" class="text-muted">Code Generated</small>
+              </div>
+             </div>
+          </div>
+      </div>
+      
+  </div>
+  <input type="hidden" id="urlGenAiApi" value="{{urlGenAiApi}}" />
+{%endblock%}
+ 
+{% block script %}
+
+ <script>
+  const urlGenCode= document.querySelector("#urlGenAiApi").value;
+ </script>
+ <script  type="text/javascript" src= "/static/assets/js/GenCode.js" > </script> 
+{% endblock%}

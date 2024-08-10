@@ -1,0 +1,77 @@
+{% extends "layouts/layout.html" %}
+
+{%block content%}
+ <!-- Hero Section -->
+  <div class=" content container"  >
+      <div  class="context">
+        <div class="form-group">
+          <label for="">Ngữ cảnh <span class="text-danger">*</span> :</label>
+          <input type="text"
+            class="form-control " name="context" id="context" aria-describedby="helpId" placeholder="">
+          <small id="helpId" style="font-size:10px" class="form-text text-muted">Ngữ cảnh trong văn bản cần dịch</small>
+        </div>
+      </div>
+      <div class="row" >
+           <div class="col-lg-5 col-md-5" >
+               <div class="d-flex flex-column">
+                <div class="form-group">
+                    <div class="form-group">
+                      <small for="source ">Ngôn ngữ cần dịch : </small>
+                      <select class="form-control " style="font-size:12px" name="source" id="source">
+                 
+                        <option value="English">Tiếng Anh</option>
+                        
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <small for="language-1">Văn bản</small>
+                        <textarea class="form-control " name="language-1" id="language-1" rows="7" ></textarea>
+                     
+
+                    </div>
+                </div>
+              
+              </div>
+           </div>
+           <div class="col-lg-2 col-md-2 d-flex align-items-center justify-content-center" >
+             <div  >
+              <button type="button"   id="btnGen" class="btn btn-primary" >
+                Dịch ->
+             
+              </button>
+             </div>
+          </div>
+           <div class="col-lg-5 col-md-5" >
+            <div class="d-flex flex-column">
+              <div class="form-group">
+                <div class="form-group">
+                    <small for="source ">Ngôn ngữ dịch ra: </small>
+                <select class="form-control" style="font-size:12px" name="destination" id="destination">
+            
+                    <option value="Vietnamese" >Tiếng Việt</option>
+               
+                  </select>
+                </div>
+                
+                <div class="form-group" >
+                    <small id="helpId" class="text-muted">Văn bản</small>
+                    <textarea class="form-control " name="language-2" id="language-2" rows="7"></textarea>
+                    
+                </div>
+              </div>
+             
+             </div>
+          </div>
+      </div>
+      
+  </div>
+  <input type="hidden" id="urlGenAiApi" value="{{urlGenAiApi}}" />
+{%endblock%}
+ 
+{% block script %}
+
+ <script>
+  const urlGenlanguage= document.querySelector("#urlGenAiApi").value;
+ </script>
+ <script  type="text/javascript" src= "/static/assets/js/GenTranslate.js" > </script> 
+{% endblock%}

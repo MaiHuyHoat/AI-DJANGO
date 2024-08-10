@@ -1,0 +1,43 @@
+{% extends "layouts/layout.html" %}
+
+{%block content%}
+ <!-- Hero Section -->
+  <div class=" content container"  >
+      <div  class="context">
+        <div class="form-group">
+          <label for="">Văn bản dữ liệu : <span class="text-danger">*</span> :</label>
+          <textarea class="form-control " name="paragraphData" id="paragraphData" rows="10" ></textarea>
+          <small id="helpId" style="font-size:10px" class="form-text text-muted">Văn bản dữ liệu cần tóm tắt .</small>
+        </div>
+      </div>
+      <div style="margin:0 auto"  >
+         <button type="button"   id="btnGen" class=" btn btn-primary " >
+           Summary Paragraph
+         </button>
+     </div>
+      <div class="row" >
+        <div class="col-12" >
+          <div class="d-flex flex-column">
+           <div class="form-group">
+            <small id="helpId" class="text-muted">Đoạn văn đã tóm tắt <span class="text-danger">*</span> </small>
+               <textarea class="form-control " name="answer" id="answer" rows="8" ></textarea>
+             
+           </div>
+           
+         </div>
+      </div>
+      
+
+      </div>
+      
+  </div>
+  <input type="hidden" id="urlGenAiApi" value="{{urlGenAiApi}}" />
+{%endblock%}
+ 
+{% block script %}
+
+ <script>
+  const urlGenQuestion= document.querySelector("#urlGenAiApi").value;
+ </script>
+ <script  type="text/javascript" src= "/static/assets/js/SummaryParagraph.js" > </script> 
+{% endblock%}

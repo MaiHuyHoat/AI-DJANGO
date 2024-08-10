@@ -1,0 +1,54 @@
+{% extends "layouts/layout.html" %}
+
+{%block content%}
+ <!-- Hero Section -->
+  <div class=" content container"  >
+      <div  class="context">
+        <div class="form-group">
+          <label for="">Văn bản dữ liệu : <span class="text-danger">*</span> :</label>
+          <textarea class="form-control " name="paragraphData" id="paragraphData" rows="7" ></textarea>
+          <small id="helpId" style="font-size:10px" class="form-text text-muted">Dữ liệu văn bản để gen câu trả lời .</small>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-lg-5 col-md-5" >
+          <div class="d-flex flex-column">
+           <div class="form-group">
+             <label for=""></label>
+               <textarea class="form-control " name="answer" id="answer" rows="10" ></textarea>
+             <small id="helpId" class="text-muted">Câu hỏi nhập liệu</small>
+           </div>
+           
+         </div>
+      </div>
+      <div class="col-lg-2 col-md-2 d-flex align-items-center justify-content-center" >
+        <div  >
+         <button type="button" style="min-width:92px"  id="btnGen" class="btn btn-primary" >
+            
+           Gen Question
+         </button>
+        </div>
+     </div>
+      <div class="col-lg-5 col-md-5" >
+       <div class="d-flex flex-column">
+         <div class="form-group">
+           <label for=""></label>
+             <textarea class="form-control text-warning" name="question" id="question" rows="10"></textarea>
+           <small id="helpId" class="text-muted">Đáp án</small>
+         </div>
+      
+        </div>
+     </div>
+      </div>
+      
+  </div>
+  <input type="hidden" id="urlGenAiApi" value="{{urlGenAiApi}}" />
+{%endblock%}
+ 
+{% block script %}
+
+ <script>
+  const urlGenQuestion= document.querySelector("#urlGenAiApi").value;
+ </script>
+ <script  type="text/javascript" src= "/static/assets/js/GenQuestion.js" > </script> 
+{% endblock%}
